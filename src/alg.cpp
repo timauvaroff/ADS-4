@@ -24,9 +24,9 @@ int countPairs2(int *arr, int len, int value) {
 int countPairs3(int *arr, int len, int value) {
     int count = 0;
     for (int i = 0; i < len - 1; i++) {
-        int right = len;
-        int left = i;
-        while (left < right - 1) {
+        int right = len-1;
+        int left = i+1;
+        while (left <= right) {
             int mid = (left + right) / 2;
             if (arr[i] + arr[mid] == value) {
                 count++;
